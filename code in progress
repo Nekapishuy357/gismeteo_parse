@@ -1,0 +1,22 @@
+url = 'https://www.gismeteo.ru/'
+headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36'
+      }
+r = requests.get(url, headers = headers)
+
+
+--еще вариант
+import requests
+
+url = 'https://www.gismeteo.ru'
+
+headers = requests.utils.default_headers()
+
+headers.update(
+    {
+        'User-Agent': 'My User Agent 1.0',
+    }
+)
+
+response = requests.get(url, headers=headers)
+print(response.text)
